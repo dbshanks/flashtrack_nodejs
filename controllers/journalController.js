@@ -1,8 +1,8 @@
 const Journal = require("../models/Journal");
 
 exports.getAllJournals = async (req, res) => {
-  const journals = await Journal.find();
   try {
+    const journals = await Journal.find();
     res.status(200).json({
       status: "success",
       results: journals.length,
@@ -12,7 +12,7 @@ exports.getAllJournals = async (req, res) => {
     });
   } catch (err) {
     res.status(404).json({
-      status: fail,
+      status: "fail",
       message: err
     });
   }
@@ -20,16 +20,26 @@ exports.getAllJournals = async (req, res) => {
 
 exports.createJournal = (req, res) => {
   res.status(500).json({
-    status: "error",
+    status: "fail",
     message: "This route is not yet defined"
   });
 };
 
-exports.getJournal = (req, res) => {
-  res.status(500).json({
-    status: "error",
-    message: "This route is not yet defined"
-  });
+exports.getJournal = async (req, res) => {
+  try {
+    const journal = await Journal.findById(req.params.id);
+    res.status(200).json({
+      status: "success",
+      data: {
+        journal
+      }
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: "fail",
+      message: err
+    });
+  }
 };
 
 exports.updateJournal = (req, res) => {
