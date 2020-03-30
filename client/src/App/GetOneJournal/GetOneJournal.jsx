@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export const JournalEntry = props => {
-  // const id = match.params.id;
+export const GetOneJournal = props => {
   const [journals, setJournals] = useState([]);
 
   useEffect(() => {
@@ -11,10 +10,17 @@ export const JournalEntry = props => {
       .then(res => {
         setJournals(res.data.data.journal);
       })
-      .catch(res => {
-        // console.log(err);
+      .catch(err => {
+        console.log(err);
       });
   }, [props.match.params.id]);
+
+  function deleteJournal() {
+    axios.delete(
+      "http://localhost:5000/api/v1/journals/" + props.match.params.id
+    );
+  }
+
   return (
     <div className="container mx-auto text-blue-500 mt-10">
       <div key={journals._id} className="mt-5">
@@ -22,7 +28,11 @@ export const JournalEntry = props => {
 
         <p className="text-sm text-gray-600">{journals.body}</p>
         <p>{journals.date}</p>
+        <h1>Journals</h1>
       </div>
+      <button className="bg-red-500 text-white" onClick={() => deleteJournal()}>
+        Delete
+      </button>
     </div>
   );
 };

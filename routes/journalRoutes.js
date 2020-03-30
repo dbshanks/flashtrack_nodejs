@@ -8,10 +8,10 @@ const {
   deleteJournal
 } = require("../controllers/journalController");
 
-router.param("id", (req, res, next, val) => {
-  console.log(`Journal Id is ${val}`);
-  next();
-});
+// router.param("id", (req, res, next, val) => {
+//   console.log(`Journal Id is ${val}`);
+//   next();
+// });
 
 router
   .route("/")

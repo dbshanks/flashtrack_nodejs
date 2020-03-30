@@ -1,9 +1,9 @@
 import React from "react";
 
-export const MainEntry = () => {
+export const Dashboard = () => {
   return (
     <div>
-      <h1>Main Entry</h1>
+      <h1>Dashboard</h1>
     </div>
   );
 };

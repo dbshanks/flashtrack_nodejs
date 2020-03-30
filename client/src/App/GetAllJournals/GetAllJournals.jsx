@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-export const JournalList = () => {
+export const GetAllJournals = () => {
   const [journals, setJournals] = useState([]);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export const JournalList = () => {
         setJournals(res.data.data.journals);
       })
       .catch(res => {
-        // console.log(err);
+        console.log(res.err);
       });
   }, [journals._id]);
   return (

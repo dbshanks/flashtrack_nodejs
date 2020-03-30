@@ -20,6 +20,11 @@ export const Navigation = () => {
               Journals
             </Link>
           </li>
+          <li>
+            <Link className="mr-5" to="/create/journals">
+              Add New Journal
+            </Link>
+          </li>
         </ul>
       </nav>
     </Fragment>

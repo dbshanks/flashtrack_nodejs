@@ -1,0 +1,1 @@
+export { GetOneJournal } from "./GetOneJournal";
