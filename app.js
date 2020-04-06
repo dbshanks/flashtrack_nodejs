@@ -19,6 +19,10 @@ app.get("/", (req, res) => {
   res.status(200).render("index.html");
 });
 
+app.get("*", (req, res) => {
+  res.sendFile(`${__dirname}/client/build/index.html`);
+});
+
 app.use("/api/v1/journals", journalRouter);
 app.use("/api/v1/users", userRouter);
 
