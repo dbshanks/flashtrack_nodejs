@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 
-export const GetOneJournal = props => {
+export const GetOneJournal = (props) => {
   const [journals, setJournals] = useState([]);
   const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/v1/journals/" + props.match.params.id)
-      .then(res => {
+      .then((res) => {
         setJournals(res.data.data.journal);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err.response);
       });
   }, [props.match.params.id]);

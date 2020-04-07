@@ -1,6 +1,6 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import MobileLeftMenuSlider from "@material-ui/core/Drawer";
+import Drawer from "@material-ui/core/Drawer";
 import {
   AppBar,
   Toolbar,
@@ -19,16 +19,20 @@ import {
   RecentActors,
   Home,
   Apps,
-  ContactMail,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+  },
   menuSliderContainer: {
-    width: 250,
+    width: "100vw",
     background: "#333",
     height: "100vh",
+    flexShrink: 0,
   },
+
   listItem: {
     color: "#fafafa",
   },
@@ -40,7 +44,12 @@ const useStyles = makeStyles({
     width: "9rem",
     marginLeft: "1rem",
   },
-});
+  toolBar: {
+    background: "#212121",
+    display: "flex",
+    justifyContent: "space-between",
+  },
+}));
 
 const menuItems = [
   {
@@ -86,12 +95,6 @@ export const Navigation = () => {
       component="div"
       onClick={toggleSlider(slider, false)}
     >
-      <img
-        className={classes.logo}
-        src="/img/whitelogo.svg"
-        alt="flashtrack logo"
-      />
-
       <List>
         {menuItems.map((item, key) => (
           <ListItem button key={key}>
@@ -111,23 +114,24 @@ export const Navigation = () => {
   return (
     <Fragment>
       <Box component="nav">
-        <AppBar style={{ background: "#212121" }}>
-          <Toolbar>
-            <IconButton onClick={toggleSlider("left", true)}>
-              <Menu style={{ color: "#fafafa", marginLeft: "-1.5rem" }} />
-            </IconButton>
+        <AppBar position="fixed" className={classes.appBar}>
+          <Toolbar className={classes.toolBar}>
             <img
               className={classes.logo}
               src="/img/whitelogo.svg"
               alt="Flashtrack Logo"
             />
-            <MobileLeftMenuSlider
+            <Drawer
               open={state.left}
               onClose={toggleSlider("left", false)}
               anchor="left"
             >
               {sideList("left")}
-            </MobileLeftMenuSlider>
+            </Drawer>
+
+            <IconButton onClick={toggleSlider("left", true)}>
+              <Menu style={{ color: "#fafafa" }} />
+            </IconButton>
           </Toolbar>
         </AppBar>
       </Box>

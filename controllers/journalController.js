@@ -7,13 +7,13 @@ exports.getAllJournals = async (req, res) => {
       status: "success",
       results: journals.length,
       data: {
-        journals
-      }
+        journals,
+      },
     });
   } catch (err) {
     res.status(404).json({
       status: "fail",
-      message: err
+      message: err,
     });
   }
 };
@@ -24,13 +24,13 @@ exports.createJournal = async (req, res) => {
     res.status(200).json({
       status: "success",
       data: {
-        newJournal
-      }
+        newJournal,
+      },
     });
   } catch (err) {
     res.status(404).json({
       status: "fail",
-      message: err
+      message: err,
     });
   }
 };
@@ -41,13 +41,13 @@ exports.getJournal = async (req, res) => {
     res.status(200).json({
       status: "success",
       data: {
-        journal
-      }
+        journal,
+      },
     });
   } catch (err) {
     res.status(404).json({
       status: "fail",
-      message: err
+      message: err,
     });
   }
 };
@@ -56,18 +56,18 @@ exports.updateJournal = async (req, res) => {
   try {
     const journal = await Journal.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
-      runValidators: true
+      runValidators: true,
     });
     res.status(200).json({
       status: "success",
       data: {
-        journal
-      }
+        journal,
+      },
     });
   } catch (err) {
     res.status(404).json({
       status: "fail",
-      message: err
+      message: err,
     });
   }
 };
@@ -77,12 +77,12 @@ exports.deleteJournal = async (req, res) => {
     await Journal.findByIdAndDelete(req.params.id);
     res.status(200).json({
       status: "success",
-      data: null
+      data: null,
     });
   } catch (err) {
     res.status(404).json({
       status: "fail",
-      message: err
+      message: err,
     });
   }
 };
