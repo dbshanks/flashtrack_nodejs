@@ -10,7 +10,8 @@
     "client": "npm run start --prefix client",
     "clientinstall": "yarn add --prefix client",
     "dev": "concurrently \"yarn run server\" \"yarn run client\"",
-    "start:prod": "NODE_ENV=production nodemon server.js"
+    "start:prod": "NODE_ENV=production nodemon server.js",
+    "heroku-postbuild": "yarn add --prefix client && yarn run build --prefix client"
   },
   "dependencies": {
     "bcrypt": "^4.0.1",
