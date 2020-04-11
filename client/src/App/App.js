@@ -1,8 +1,10 @@
 import React, { Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
+import { Splash } from "./pages/Splash";
 import { Navigation } from "./components/Navigation";
 import { Error404 } from "./pages/Error404";
 import { Dashboard } from "./pages/Dashboard";
+import { SignIn } from "./pages/Auth/SignIn";
 import { GetAllJournals } from "./pages/Journals/GetAllJournals";
 import { GetOneJournal } from "./pages/Journals/GetOneJournal";
 import { UpdateOneJournal } from "./pages/Journals/UpdateOneJournal";
@@ -18,11 +20,14 @@ const App = () => {
   return (
     <Fragment>
       <CssBaseline />
-      <Container maxWidth="lg">
-        <Navigation />
 
-        <Switch>
-          <Route exact path="/" component={Dashboard} />
+      <Switch>
+        <Route exact path="/" component={Splash} />
+        <Container maxWidth="lg">
+          <Navigation />
+          <Route exact path="/dashboard" component={Dashboard} />
+
+          <Route path="/signin" component={SignIn} />
 
           <Route path="/journals" component={GetAllJournals} />
           <Route path="/create/journals" component={CreateJournal} />
@@ -36,8 +41,8 @@ const App = () => {
 
           <Route path="/emdr" component={EMDR} />
           <Route path="*" component={Error404} />
-        </Switch>
-      </Container>
+        </Container>
+      </Switch>
     </Fragment>
   );
 };
