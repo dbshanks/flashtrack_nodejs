@@ -1,27 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { TextField, Button, Grid } from "@material-ui/core";
-
+import { useStyles } from "./CreateJournal.styles";
+import {
+  TextField,
+  Button,
+  Grid,
+  Checkbox,
+  Box,
+  Radio,
+  RadioGroup,
+  FormControl,
+  FormLabel,
+  FormControlLabel,
+} from "@material-ui/core";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
-
-const useStyles = makeStyles({
-  container: {
-    marginTop: "5rem",
-    height: "100vh",
-    width: "100%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  button: {
-    backgroundColor: "#212121",
-    color: "#fafafa",
-  },
-  titleField: {
-    marginBottom: "2rem",
-  },
-});
 
 export const CreateJournal = () => {
   const [addJournal, setAddJournal] = useState([]);
@@ -56,14 +48,35 @@ export const CreateJournal = () => {
       <Grid container justify="space-around">
         <Grid xs={6}>
           <form onSubmit={(e) => submit(e)}>
+            <FormLabel component="legend">Experience</FormLabel>
+            <RadioGroup
+              aria-label="Experience"
+              name="experience"
+              value={addJournal.experience}
+              onChange={(e) => handle(e)}
+            >
+              <FormControlLabel
+                value="flashback"
+                control={<Radio />}
+                label="Flashback"
+              />
+              <FormControlLabel
+                value="trigger"
+                control={<Radio />}
+                label="Trigger"
+              />
+              <FormControlLabel value="both" control={<Radio />} label="Both" />
+            </RadioGroup>
+
             <div>
               <TextField
                 id="title"
                 name="title"
+                fullWidth
                 onChange={(e) => handle(e)}
                 value={addJournal.title}
                 label="Title"
-                variant="filled"
+                variant="outlined"
                 className={classes.titleField}
               />
             </div>
@@ -71,13 +84,14 @@ export const CreateJournal = () => {
               <TextField
                 id="body"
                 name="body"
-                label="Multiline"
+                label="Journal"
                 onChange={(e) => handle(e)}
                 value={addJournal.body}
                 multiline
+                fullWidth
                 rows="4"
-                defaultValue="Enter your journal entry"
-                variant="filled"
+                defaultValue="Journal entry"
+                variant="outlined"
                 className={classes.titleField}
               />
             </div>

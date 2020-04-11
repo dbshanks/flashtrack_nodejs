@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import Drawer from "@material-ui/core/Drawer";
+
 import { useStyles } from "./Navigation.styles";
 import {
   AppBar,
@@ -9,6 +9,8 @@ import {
   ListItemIcon,
   ListItemText,
   List,
+  Drawer,
+  Hidden,
   Typography,
   Box,
 } from "@material-ui/core";
@@ -85,13 +87,32 @@ export const Navigation = () => {
   return (
     <Fragment>
       <Box component="nav">
-        <AppBar position="fixed" className={classes.appBar} elevation={0}>
+        <AppBar position="fixed" className={classes.appBar} elevation={4}>
           <Toolbar className={classes.toolBar}>
-            <img
-              className={classes.logo}
-              src="/img/blacklogo.svg"
-              alt="Flashtrack Logo"
-            />
+            <Toolbar>
+              <Link to="/">
+                <img
+                  className={classes.logo}
+                  src="/img/blacklogo.svg"
+                  alt="Flashtrack Logo"
+                />
+              </Link>
+              <Hidden only={["xs", "md"]}>
+                <Link to="/" className={classes.links}>
+                  Home
+                </Link>
+                <Link to="/journals" className={classes.links}>
+                  Journals
+                </Link>
+                <Link to="/contacts" className={classes.links}>
+                  Contacts
+                </Link>
+                <Link color="primary" to="/emdr" className={classes.links}>
+                  EMDR
+                </Link>
+              </Hidden>
+            </Toolbar>
+
             <Drawer
               open={state.left}
               onClose={toggleSlider("left", false)}
@@ -99,10 +120,11 @@ export const Navigation = () => {
             >
               {sideList("left")}
             </Drawer>
-
-            <IconButton onClick={toggleSlider("left", true)}>
-              <Menu style={{ color: "#212121" }} />
-            </IconButton>
+            <Hidden only={["md", "lg", "xl"]}>
+              <IconButton onClick={toggleSlider("left", true)}>
+                <Menu style={{ color: "#212121" }} />
+              </IconButton>
+            </Hidden>
           </Toolbar>
         </AppBar>
       </Box>

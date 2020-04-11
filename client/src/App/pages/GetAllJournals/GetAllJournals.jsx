@@ -6,9 +6,7 @@ import {
   Link,
   Chip,
   Card,
-  CardActions,
   CardContent,
-  Button,
   CardActionArea,
 } from "@material-ui/core";
 import { useStyles } from "./GetAllJournals.styles";

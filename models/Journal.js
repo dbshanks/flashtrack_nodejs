@@ -3,12 +3,15 @@ const mongoose = require("mongoose");
 const JournalSchema = mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   body: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
+  experience: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("journal", JournalSchema);

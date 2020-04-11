@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
+import { Grid, Box, Typography, Button } from "@material-ui/core";
+import { useStyles } from "./GetOneJournal.styles";
+import DeleteIcon from "@material-ui/icons/Delete";
+import EditIcon from "@material-ui/icons/Edit";
 import axios from "axios";
 
 export const GetOneJournal = (props) => {
+  const classes = useStyles();
   const [journals, setJournals] = useState([]);
   const [redirect, setRedirect] = useState(false);
 
@@ -19,23 +24,42 @@ export const GetOneJournal = (props) => {
 
   function deleteJournal() {
     axios.delete(
-      "http://localhost:5000/api/v1/journals/" + props.match.params.id
+      "http://localhost:4000/api/v1/journals/" + props.match.params.id
     );
     setTimeout(() => setRedirect(true), 1000);
   }
 
   return (
-    <div className="container mx-auto text-blue-500 mt-10">
+    <Grid container className={classes.container}>
       {redirect ? <Redirect to="/journals" /> : null}
-      <div key={journals._id} className="mt-5">
-        <h1 className="text-2xl">{journals.title}</h1>
 
-        <p className="text-sm text-gray-600">{journals.body}</p>
-        <p>{journals.date}</p>
-      </div>
-      <button className="bg-red-500 text-white" onClick={() => deleteJournal()}>
-        Delete
-      </button>
-    </div>
+      <Grid item sm={12} key={journals._id}>
+        <Typography variant="h3">{journals.title}</Typography>
+
+        <Box className={classes.journalEntry} component="div">
+          <Typography variant="body1">{journals.body}</Typography>
+          <Typography color="primary" variant="body2">
+            {journals.date}
+          </Typography>
+        </Box>
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          startIcon={<EditIcon />}
+        >
+          Edit
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          startIcon={<DeleteIcon />}
+          onClick={() => deleteJournal()}
+        >
+          Delete
+        </Button>
+      </Grid>
+    </Grid>
   );
 };
