@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
+import { useStyles } from "./Navigation.styles";
 import {
   AppBar,
   Toolbar,
@@ -21,35 +21,6 @@ import {
   Apps,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
-
-const useStyles = makeStyles((theme) => ({
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-  },
-  menuSliderContainer: {
-    width: "100vw",
-    background: "#333",
-    height: "100vh",
-    flexShrink: 0,
-  },
-
-  listItem: {
-    color: "#fafafa",
-  },
-  links: {
-    textDecoration: "none",
-    color: "#fafafa",
-  },
-  logo: {
-    width: "9rem",
-    marginLeft: "1rem",
-  },
-  toolBar: {
-    background: "#212121",
-    display: "flex",
-    justifyContent: "space-between",
-  },
-}));
 
 const menuItems = [
   {
@@ -114,11 +85,11 @@ export const Navigation = () => {
   return (
     <Fragment>
       <Box component="nav">
-        <AppBar position="fixed" className={classes.appBar}>
+        <AppBar position="fixed" className={classes.appBar} elevation={0}>
           <Toolbar className={classes.toolBar}>
             <img
               className={classes.logo}
-              src="/img/whitelogo.svg"
+              src="/img/blacklogo.svg"
               alt="Flashtrack Logo"
             />
             <Drawer
@@ -130,7 +101,7 @@ export const Navigation = () => {
             </Drawer>
 
             <IconButton onClick={toggleSlider("left", true)}>
-              <Menu style={{ color: "#fafafa" }} />
+              <Menu style={{ color: "#212121" }} />
             </IconButton>
           </Toolbar>
         </AppBar>
