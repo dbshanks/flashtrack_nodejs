@@ -14,7 +14,7 @@ export const useStyles = makeStyles((theme) => ({
   listItem: {
     color: "#212121",
   },
-  links: {
+  sidebarLinks: {
     textDecoration: "none",
     color: "#212121",
   },

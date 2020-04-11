@@ -19,7 +19,7 @@ export const GetAllJournals = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/v1/journals/")
+      .get("http://localhost:5000/api/v1/journals")
       .then((res) => {
         setJournals(res.data.data.journals);
       })
@@ -46,28 +46,20 @@ export const GetAllJournals = () => {
             <Link href={`/journal/${journal._id}`} variant="h5" gutterBottom>
               <CardActionArea>
                 <CardContent className={classes.cardContent}>
-                  <Typography variant="h5" className={classes.title}>
-                    {journal.title}
-                  </Typography>
+                  <div>
+                    <Typography variant="h5" className={classes.title}>
+                      {journal.title}
+                    </Typography>
 
-                  <Typography variant="body1" component="p">
-                    {journal.body}
-                  </Typography>
+                    <Typography variant="body2" component="p">
+                      {journal.body}
+                    </Typography>
+                  </div>
                   <Box component="div" className={classes.root}>
                     <Chip
-                      label="Trigger"
+                      label={journal.event}
                       size="small"
                       className={classes.danger}
-                    />
-                    <Chip
-                      label="Flashback"
-                      size="small"
-                      className={classes.warning}
-                    />
-                    <Chip
-                      label="Both"
-                      size="small"
-                      className={classes.caution}
                     />
                   </Box>
                 </CardContent>

@@ -13,7 +13,7 @@ export const GetOneJournal = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/v1/journals/" + props.match.params.id)
+      .get("http://localhost:5000/api/v1/journals/" + props.match.params.id)
       .then((res) => {
         setJournals(res.data.data.journal);
       })
@@ -24,7 +24,7 @@ export const GetOneJournal = (props) => {
 
   function deleteJournal() {
     axios.delete(
-      "http://localhost:4000/api/v1/journals/" + props.match.params.id
+      "http://localhost:5000/api/v1/journals/" + props.match.params.id
     );
     setTimeout(() => setRedirect(true), 1000);
   }

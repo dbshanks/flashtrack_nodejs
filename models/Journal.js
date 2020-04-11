@@ -9,8 +9,9 @@ const JournalSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  experience: {
+  event: {
     type: String,
+    required: true,
   },
 });
 

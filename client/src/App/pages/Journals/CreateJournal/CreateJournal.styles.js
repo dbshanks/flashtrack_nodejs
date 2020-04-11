@@ -1,14 +1,17 @@
 import { makeStyles } from "@material-ui/styles";
 
-export const useStyles = makeStyles({
+export const useStyles = makeStyles((theme) => ({
   container: {
-    marginTop: "5rem",
     height: "100vh",
     width: "100%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+  },
+  formControl: {
+    minWidth: 200,
+    marginBottom: "2rem",
   },
   button: {
     backgroundColor: "#212121",
@@ -20,4 +23,4 @@ export const useStyles = makeStyles({
   checkGroup: {
     display: "flex",
   },
-});
+}));

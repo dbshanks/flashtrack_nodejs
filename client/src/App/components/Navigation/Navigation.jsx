@@ -11,7 +11,6 @@ import {
   List,
   Drawer,
   Hidden,
-  Typography,
   Box,
 } from "@material-ui/core";
 import {
@@ -75,7 +74,7 @@ export const Navigation = () => {
               {item.listIcon}
             </ListItemIcon>
             <ListItemText>
-              <Link className={classes.links} to={item.routePath}>
+              <Link className={classes.sidebarlinks} to={item.routePath}>
                 {item.listText}
               </Link>
             </ListItemText>

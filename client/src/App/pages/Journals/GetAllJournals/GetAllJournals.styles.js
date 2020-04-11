@@ -24,7 +24,7 @@ export const useStyles = makeStyles({
     minHeight: "20rem",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     color: "#212121",
   },
 

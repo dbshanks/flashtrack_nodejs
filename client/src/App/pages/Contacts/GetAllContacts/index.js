@@ -1,0 +1,1 @@
+export { GetAllContacts } from "./GetAllContacts";

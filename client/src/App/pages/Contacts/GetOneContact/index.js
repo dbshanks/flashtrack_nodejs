@@ -1,0 +1,1 @@
+export { GetOneContact } from "./GetOneContact";
