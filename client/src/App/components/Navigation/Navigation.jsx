@@ -86,7 +86,7 @@ export const Navigation = () => {
   return (
     <Fragment>
       <Box component="nav">
-        <AppBar position="fixed" className={classes.appBar} elevation={4}>
+        <AppBar position="fixed" elevation={4}>
           <Toolbar className={classes.toolBar}>
             <Toolbar>
               <Link to="/">

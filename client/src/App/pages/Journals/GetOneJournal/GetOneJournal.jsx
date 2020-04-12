@@ -5,6 +5,7 @@ import { useStyles } from "./GetOneJournal.styles";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import axios from "axios";
+import { AnimationWrapper } from "../../../components/AnimationWrapper";
 
 export const GetOneJournal = (props) => {
   const classes = useStyles();
@@ -30,36 +31,38 @@ export const GetOneJournal = (props) => {
   }
 
   return (
-    <Grid container className={classes.container}>
-      {redirect ? <Redirect to="/journals" /> : null}
+    <AnimationWrapper>
+      <Grid container className={classes.container}>
+        {redirect ? <Redirect to="/journals" /> : null}
 
-      <Grid item sm={12} key={journals._id}>
-        <Typography variant="h3">{journals.title}</Typography>
+        <Grid item sm={12} key={journals._id}>
+          <Typography variant="h3">{journals.title}</Typography>
 
-        <Box className={classes.journalEntry} component="div">
-          <Typography variant="body1">{journals.body}</Typography>
-          <Typography color="primary" variant="body2">
-            {journals.date}
-          </Typography>
-        </Box>
-        <Button
-          variant="contained"
-          color="primary"
-          className={classes.button}
-          startIcon={<EditIcon />}
-        >
-          Edit
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          className={classes.button}
-          startIcon={<DeleteIcon />}
-          onClick={() => deleteJournal()}
-        >
-          Delete
-        </Button>
+          <Box className={classes.journalEntry} component="div">
+            <Typography variant="body1">{journals.body}</Typography>
+            <Typography color="primary" variant="body2">
+              {journals.date}
+            </Typography>
+          </Box>
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            startIcon={<EditIcon />}
+          >
+            Edit
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            startIcon={<DeleteIcon />}
+            onClick={() => deleteJournal()}
+          >
+            Delete
+          </Button>
+        </Grid>
       </Grid>
-    </Grid>
+    </AnimationWrapper>
   );
 };

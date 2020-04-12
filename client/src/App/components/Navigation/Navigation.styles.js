@@ -1,9 +1,6 @@
 import { makeStyles } from "@material-ui/styles";
 
 export const useStyles = makeStyles((theme) => ({
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-  },
   menuSliderContainer: {
     width: "100vw",
     background: "#fafafa",

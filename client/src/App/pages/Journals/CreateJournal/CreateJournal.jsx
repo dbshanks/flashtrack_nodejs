@@ -3,6 +3,7 @@ import { useStyles } from "./CreateJournal.styles";
 import { TextField, Button, Grid } from "@material-ui/core";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import { AnimationWrapper } from "../../../components/AnimationWrapper";
 
 export const CreateJournal = () => {
   const [addJournal, setAddJournal] = useState([]);
@@ -31,58 +32,60 @@ export const CreateJournal = () => {
 
   const classes = useStyles();
   return (
-    <div className={classes.container}>
-      {redirect ? <Redirect to="/journals" /> : null}
+    <AnimationWrapper>
+      <div className={classes.container}>
+        {redirect ? <Redirect to="/journals" /> : null}
 
-      <Grid container justify="space-around">
-        <Grid item xs={6}>
-          <form onSubmit={(e) => submit(e)}>
-            <div>
-              <TextField
-                id="title"
-                label="Title"
-                variant="outlined"
-                fullWidth
-                value={addJournal.title}
-                onChange={(e) => handle(e)}
-                className={classes.titleField}
-              />
-            </div>
-            <div>
-              <TextField
-                id="body"
-                label="Journal"
-                value={addJournal.body}
-                onChange={(e) => handle(e)}
-                multiline
-                fullWidth
-                rows="20"
-                variant="outlined"
-                className={classes.titleField}
-              />
-            </div>
-            <div>
-              <TextField
-                id="event"
-                label="Event"
-                value={addJournal.event}
-                onChange={(e) => handle(e)}
-                variant="outlined"
-                className={classes.titleField}
-              />
-            </div>
+        <Grid container justify="space-around">
+          <Grid item xs={6}>
+            <form onSubmit={(e) => submit(e)}>
+              <div>
+                <TextField
+                  id="title"
+                  label="Title"
+                  variant="outlined"
+                  fullWidth
+                  value={addJournal.title}
+                  onChange={(e) => handle(e)}
+                  className={classes.titleField}
+                />
+              </div>
+              <div>
+                <TextField
+                  id="body"
+                  label="Journal"
+                  value={addJournal.body}
+                  onChange={(e) => handle(e)}
+                  multiline
+                  fullWidth
+                  rows="20"
+                  variant="outlined"
+                  className={classes.titleField}
+                />
+              </div>
+              <div>
+                <TextField
+                  id="event"
+                  label="Event"
+                  value={addJournal.event}
+                  onChange={(e) => handle(e)}
+                  variant="outlined"
+                  className={classes.titleField}
+                />
+              </div>
 
-            <Button
-              type="submit"
-              variant="contained"
-              className={classes.button}
-              onClick={() => redirectHandler()}
-            >
-              Submit
-            </Button>
-          </form>
+              <Button
+                type="submit"
+                variant="contained"
+                className={classes.button}
+                onClick={() => redirectHandler()}
+              >
+                Submit
+              </Button>
+            </form>
+          </Grid>
         </Grid>
-      </Grid>
-    </div>
+      </div>
+    </AnimationWrapper>
   );
 };

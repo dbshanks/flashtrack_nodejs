@@ -2,7 +2,10 @@ import { makeStyles } from "@material-ui/styles";
 
 export const useStyles = makeStyles((theme) => ({
   splashPage: {
-    width: "100vw",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
     height: "100vh",
     display: "flex",
     flexDirection: "column",

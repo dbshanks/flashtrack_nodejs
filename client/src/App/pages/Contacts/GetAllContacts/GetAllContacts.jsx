@@ -1,9 +1,10 @@
 import React from "react";
+import { AnimationWrapper } from "../../../components/AnimationWrapper";
 
 export const GetAllContacts = () => {
   return (
-    <div>
+    <AnimationWrapper>
       <h1>Get Contacts</h1>
-    </div>
+    </AnimationWrapper>
   );
 };

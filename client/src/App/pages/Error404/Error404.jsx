@@ -1,8 +1,9 @@
 import React from "react";
+import { AnimationWrapper } from "../../components/AnimationWrapper";
 
 export const Error404 = () => {
   return (
-    <div
+    <AnimationWrapper
       style={{
         width: "100%",
         height: "100vh",
@@ -12,6 +13,6 @@ export const Error404 = () => {
       }}
     >
       <h1>Error 404</h1>
-    </div>
+    </AnimationWrapper>
   );
 };
