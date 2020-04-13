@@ -18,10 +18,10 @@ export const Splash = () => {
             />
             <Box component="div">
               <Typography variant="h6" className={classes.linkContainer}>
-                <Link to="signIn" className={classes.link}>
+                <Link to="/signIn" className={classes.link}>
                   Sign In
                 </Link>
-                <Link to="signIn" className={classes.link}>
+                <Link to="/signUp" className={classes.link}>
                   Sign Up
                 </Link>
               </Typography>

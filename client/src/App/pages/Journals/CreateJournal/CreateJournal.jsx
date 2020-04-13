@@ -12,7 +12,7 @@ export const CreateJournal = () => {
   function submit(e) {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/v1/journals/", addJournal)
+      .post("https://flashtrack.herokuapp.com/api/v1/journals/", addJournal)
       .then((res) => {
         console.log(res);
       })

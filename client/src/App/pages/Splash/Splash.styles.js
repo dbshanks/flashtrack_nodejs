@@ -14,7 +14,8 @@ export const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.main,
   },
   logo: {
-    width: "35rem",
+    maxWidth: "35rem",
+    width: "80%",
   },
   link: {
     textDecoration: "none",

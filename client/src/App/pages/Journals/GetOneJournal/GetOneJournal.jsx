@@ -25,7 +25,8 @@ export const GetOneJournal = (props) => {
 
   function deleteJournal() {
     axios.delete(
-      "http://localhost:5000/api/v1/journals/" + props.match.params.id
+      "https://flashtrack.herokuapp.com/api/v1/journals/" +
+        props.match.params.id
     );
     setTimeout(() => setRedirect(true), 1000);
   }

@@ -5,6 +5,7 @@ import { Navigation } from "./components/Navigation";
 import { Error404 } from "./pages/Error404";
 import { Dashboard } from "./pages/Dashboard";
 import { SignIn } from "./pages/Auth/SignIn";
+import { SignUp } from "./pages/Auth/SignUp";
 import { GetAllJournals } from "./pages/Journals/GetAllJournals";
 import { GetOneJournal } from "./pages/Journals/GetOneJournal";
 import { UpdateOneJournal } from "./pages/Journals/UpdateOneJournal";
@@ -29,6 +30,7 @@ const App = () => {
             <Route exact path="/" component={Splash} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/signin" component={SignIn} />
+            <Route path="/signup" component={SignUp} />
 
             <Route path="/journals" component={GetAllJournals} />
             <Route path="/create/journals" component={CreateJournal} />

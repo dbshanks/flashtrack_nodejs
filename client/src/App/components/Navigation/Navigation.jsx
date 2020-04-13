@@ -26,8 +26,8 @@ import { Link } from "react-router-dom";
 const menuItems = [
   {
     listIcon: <Home />,
-    listText: "Home",
-    routePath: "/",
+    listText: "Dashboard",
+    routePath: "/dashboard",
   },
   {
     listIcon: <Add />,
@@ -97,8 +97,8 @@ export const Navigation = () => {
                 />
               </Link>
               <Hidden only={["xs", "md"]}>
-                <Link to="/" className={classes.links}>
-                  Home
+                <Link to="/dashboard" className={classes.links}>
+                  Dashboard
                 </Link>
                 <Link to="/journals" className={classes.links}>
                   Journals

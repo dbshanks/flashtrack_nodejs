@@ -20,7 +20,7 @@ export const GetAllJournals = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/v1/journals")
+      .get("https://flashtrack.herokuapp.com/api/v1/journals")
       .then((res) => {
         setJournals(res.data.data.journals);
       })
