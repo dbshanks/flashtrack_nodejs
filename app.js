@@ -20,7 +20,7 @@ app.use("/api/v1/contacts", contactRouter);
 app.use("/api/v1/users", userRouter);
 
 //Frontend React Routes
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(`${__dirname}/client/build/index.html`);
 });
 
