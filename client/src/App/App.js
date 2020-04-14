@@ -38,7 +38,7 @@ const App = () => {
             <Route path="/journal/update/:id" component={UpdateOneJournal} />
 
             <Route path="/contacts" component={GetAllContacts} />
-            <Route path="/create/contacts" component={CreateContact} />
+            <Route path="/create/contact" component={CreateContact} />
             <Route path="/contact/:id" component={GetOneContact} />
             <Route path="/contact/update/:id" component={UpdateOneContact} />
 
