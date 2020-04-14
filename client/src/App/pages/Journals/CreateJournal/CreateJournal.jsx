@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { useStyles } from "./CreateJournal.styles";
-import { TextField, Button, Grid } from "@material-ui/core";
+import {
+  TextField,
+  Button,
+  Grid,
+  Select,
+  MenuItem,
+  InputLabel,
+} from "@material-ui/core";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 import { AnimationWrapper } from "../../../components/AnimationWrapper";
@@ -12,7 +19,7 @@ export const CreateJournal = () => {
   function submit(e) {
     e.preventDefault();
     axios
-      .post("https://flashtrack.herokuapp.com/api/v1/journals/", addJournal)
+      .post("https://flashtrack.herokuapp.com/api/v1/journals", addJournal)
       .then((res) => {
         console.log(res);
       })

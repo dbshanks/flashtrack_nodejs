@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const journalRouter = require("./routes/journalRoutes");
 const userRouter = require("./routes/userRoutes");
+const contactRouter = require("./routes/contactRoutes");
 
 const app = express();
 
@@ -15,10 +16,11 @@ app.use(express.json({ extended: false }));
 app.use(express.static(`${__dirname}/client/build`));
 
 app.use("/api/v1/journals", journalRouter);
+app.use("/api/v1/contacts", contactRouter);
 app.use("/api/v1/users", userRouter);
 
 //Frontend React Routes
-app.get("*", (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(`${__dirname}/client/build/index.html`);
 });
 
