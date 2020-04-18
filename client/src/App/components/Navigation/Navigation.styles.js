@@ -18,16 +18,16 @@ export const useStyles = makeStyles((theme) => ({
   logo: {
     width: "9rem",
     marginLeft: "-1rem",
+    mixBlendMode: "difference",
   },
   toolBar: {
-    background: "#fafafa",
-    color: "#212121",
     display: "flex",
     justifyContent: "space-between",
   },
   links: {
     textDecoration: "none",
     marginLeft: "1rem",
-    color: "#212121",
+    color: "#fff",
+    mixBlendMode: "difference",
   },
 }));

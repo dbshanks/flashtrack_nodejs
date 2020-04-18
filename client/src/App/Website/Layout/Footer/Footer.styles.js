@@ -5,14 +5,15 @@ const useStyles = makeStyles({
     backgroundColor: "#333",
     color: "#fff",
     height: "10rem",
+    width: "100%",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   logo: {
     maxWidth: "20rem",
-    width: "15rem"
-  }
+    width: "15rem",
+  },
 });
 
 export default useStyles;

@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from "react";
-
 import { useStyles } from "./Navigation.styles";
 import {
   AppBar,
@@ -12,6 +11,7 @@ import {
   Drawer,
   Hidden,
   Box,
+  Link,
 } from "@material-ui/core";
 import {
   Menu,
@@ -21,7 +21,7 @@ import {
   Home,
   Apps,
 } from "@material-ui/icons";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const menuItems = [
   {
@@ -86,27 +86,31 @@ export const Navigation = () => {
   return (
     <Fragment>
       <Box component="nav">
-        <AppBar position="fixed" elevation={4}>
+        <AppBar
+          position="fixed"
+          style={{ backgroundColor: "transparent", mixBlendMode: "difference" }}
+          elevation={0}
+        >
           <Toolbar className={classes.toolBar}>
             <Toolbar>
-              <Link to="/">
+              <Link href="/">
                 <img
                   className={classes.logo}
-                  src="/img/blacklogo.svg"
+                  src="/img/whitelogo.svg"
                   alt="Flashtrack Logo"
                 />
               </Link>
               <Hidden only={["xs", "md"]}>
-                <Link to="/dashboard" className={classes.links}>
+                <Link href="/dashboard" className={classes.links}>
                   Dashboard
                 </Link>
-                <Link to="/journals" className={classes.links}>
+                <Link href="/journals" className={classes.links}>
                   Journals
                 </Link>
-                <Link to="/contacts" className={classes.links}>
+                <Link href="/contacts" className={classes.links}>
                   Contacts
                 </Link>
-                <Link color="primary" to="/emdr" className={classes.links}>
+                <Link color="primary" href="/emdr" className={classes.links}>
                   EMDR
                 </Link>
               </Hidden>

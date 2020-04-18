@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   entry: {
     backgroundColor: "#fff",
     display: "flex",
@@ -8,30 +8,34 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: "20rem",
-    marginTop: "5rem"
+    marginTop: "5rem",
   },
   buttonStyle: {
     color: "#fff",
     backgroundColor: "#333",
-    marginLeft: "2.2rem"
+    marginLeft: "2.2rem",
   },
   heading: {
-    marginLeft: "2rem"
+    marginLeft: "2rem",
+    textAlign: "right",
   },
   paper: {
     backgroundColor: "#fff",
     padding: theme.spacing(2),
     textAlign: "center",
-    color: "#fff"
+    color: "#fff",
   },
   paperOne: {
     backgroundColor: "#fff",
-    padding: theme.spacing(2)
+    padding: theme.spacing(2),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-end",
   },
   iPhoneMockup: {
     marginTop: "5rem",
     width: "22rem",
-    maxWidth: "100%"
-  }
+    maxWidth: "100%",
+  },
 }));
 export default useStyles;

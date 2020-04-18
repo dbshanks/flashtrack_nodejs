@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import ScrollAnimation from "react-animate-on-scroll";
-import { Container, Grid, Typography } from "@material-ui/core";
+import { Container, Grid, Typography, Link } from "@material-ui/core";
 
 import useStyles from "./SignUp.styles";
 import "animate.css/animate.min.css";
@@ -16,7 +15,7 @@ const SignUpWeb = () => {
             <Typography variant="h6">returning clients</Typography>
           </ScrollAnimation>
           <ScrollAnimation animateIn="fadeInUp" delay={250}>
-            <Link to="/signin">
+            <Link href="/signin" className={classes.links}>
               <Typography variant="h2">sign in - login</Typography>
             </Link>
           </ScrollAnimation>
@@ -26,8 +25,8 @@ const SignUpWeb = () => {
             <Typography variant="h6">new clients</Typography>
           </ScrollAnimation>
           <ScrollAnimation animateIn="fadeInUp" delay={250}>
-            <Link to="/signup">
-              <Typography variant="h2">sign up now</Typography>
+            <Link href="/signup" className={classes.links}>
+              <Typography variant="h2">sign up</Typography>
             </Link>
           </ScrollAnimation>
         </Grid>

@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import {
   Container,
   CssBaseline,
   Grid,
   Button,
-  Typography
+  Typography,
+  Link,
 } from "@material-ui/core";
 import ScrollAnimation from "react-animate-on-scroll";
 
@@ -21,14 +21,14 @@ const Header = () => {
 
       <Grid container spacing={2} justify="center" alignItems="center">
         <Grid xs={12} sm={12} lg={6}>
-          <div className={classes.paperOne}>
-            <ScrollAnimation animateIn="fadeInLeft">
-              <Typography variant="h1" className={classes.heading}>
+          <div>
+            <ScrollAnimation
+              animateIn="fadeInLeft"
+              className={classes.paperOne}
+            >
+              <Typography variant="h2" className={classes.heading}>
                 let us help you break away from the past and remain present
               </Typography>
-              <Link to="/signup">
-                <Button className={classes.buttonStyle}>sign Up</Button>
-              </Link>
             </ScrollAnimation>
           </div>
         </Grid>

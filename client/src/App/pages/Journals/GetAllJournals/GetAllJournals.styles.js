@@ -42,6 +42,7 @@ export const useStyles = makeStyles({
     fontSize: "5rem",
   },
   containerSpacing: {
+    background: "#fafafa",
     marginTop: "5rem",
   },
   danger: {

@@ -13,7 +13,7 @@ import ScrollAnimation from "react-animate-on-scroll";
 import useStyles from "./Entry.styles";
 import "animate.css/animate.min.css";
 
-const Entry = () => {
+export const Entry = () => {
   const classes = useStyles();
   return (
     <div className={classes.entry}>
@@ -34,5 +34,3 @@ const Entry = () => {
     </div>
   );
 };
-
-export default Entry;
