@@ -14,6 +14,7 @@ import { GetAllContacts } from "./pages/Contacts/GetAllContacts";
 import { CreateContact } from "./pages/Contacts/CreateContact";
 import { GetOneContact } from "./pages/Contacts/GetOneContact";
 import { UpdateOneContact } from "./pages/Contacts/UpdateOneContact";
+import Entry from "./Website/Entry";
 import { CssBaseline, Container } from "@material-ui/core";
 import { EMDR } from "./pages/EMDR";
 import { AnimatePresence } from "framer-motion";
@@ -27,7 +28,8 @@ const App = () => {
         <CssBaseline />
         <AnimatePresence exitBeforeEnter>
           <Switch location={location} key={location.pathname}>
-            <Route exact path="/" component={Splash} />
+            <Route exact path="/" component={Entry} />
+            <Route exact path="/app" component={Splash} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/signin" component={SignIn} />
             <Route path="/signup" component={SignUp} />

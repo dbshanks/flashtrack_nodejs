@@ -52,7 +52,7 @@ export const CreateContact = () => {
               </div>
               <div>
                 <TextField
-                  id="phone"
+                  id="phonenumber"
                   label="Phone"
                   value={addContact.phonenumber}
                   onChange={(e) => handle(e)}
@@ -64,7 +64,6 @@ export const CreateContact = () => {
               <div>
                 <TextField
                   id="email"
-                  type="email"
                   label="Email"
                   fullWidth
                   value={addContact.email}
