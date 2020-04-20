@@ -32,7 +32,7 @@ export const GetAllContacts = () => {
       <Grid container spacing={3} className={classes.containerSpacing}>
         <Grid item xs={12} sm={12} md={3} lg={3}>
           <Card className={classes.card}>
-            <Link href={`/create/contact`} variant="h5" gutterBottom>
+            <Link href={`/create/contacts`} variant="h5" gutterBottom>
               <CardActionArea>
                 <CardContent className={classes.cardAddContent}>
                   <Add className={classes.addIcon} />

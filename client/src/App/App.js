@@ -3,7 +3,6 @@ import { Route, Switch, useLocation } from "react-router-dom";
 import { Splash } from "./pages/Splash";
 import { Navigation } from "./components/Navigation";
 import { Error404 } from "./pages/Error404";
-import { Dashboard } from "./pages/Dashboard";
 import { SignIn } from "./pages/Auth/SignIn";
 import { SignUp } from "./pages/Auth/SignUp";
 import { GetAllJournals } from "./pages/Journals/GetAllJournals";
@@ -29,7 +28,6 @@ const App = () => {
         <Switch location={location} key={location.pathname}>
           <Route exact path="/" component={Entry} />
           <Route path="/app" component={Splash} />
-          <Route path="/dashboard" component={Dashboard} />
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={SignUp} />
 
@@ -39,7 +37,7 @@ const App = () => {
           <Route path="/journal/update/:id" component={UpdateOneJournal} />
 
           <Route path="/contacts" component={GetAllContacts} />
-          <Route path="/create/contact" component={CreateContact} />
+          <Route path="/create/contacts" component={CreateContact} />
           <Route path="/contact/:id" component={GetOneContact} />
           <Route path="/contact/update/:id" component={UpdateOneContact} />
 

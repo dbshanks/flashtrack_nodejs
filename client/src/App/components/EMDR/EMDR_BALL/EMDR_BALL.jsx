@@ -1,7 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import { TweenMax, Power2 } from "gsap";
+import { gsap, Power2 } from "gsap";
 import { CSSPlugin } from "gsap/CSSPlugin";
-import { Container } from "@material-ui/core";
+import {
+  Grid,
+  Box,
+  BottomNavigation,
+  BottomNavigationAction,
+} from "@material-ui/core";
 import { PlayArrow, Pause } from "@material-ui/icons";
 
 import useStyles from "./EMDR_BALL.styles.js";
@@ -17,37 +22,46 @@ const EMDR_BALL = () => {
 
   useEffect(() => {
     setAnimation(
-      TweenMax.to(emdrElement, 1, {
-        x: 1600,
-        repeat: -1,
-        ease: Power2.easeInOut,
-        yoyo: true
-      }).pause()
+      gsap
+        .to(emdrElement, 1, {
+          x: window.innerWidth - 100,
+          repeat: -1,
+          ease: Power2.easeInOut,
+          yoyo: true,
+        })
+        .pause()
     );
   }, []);
 
   return (
-    <Container component="main" maxWidth="xl" className={classes.contain}>
-      <div
-        className={classes.circleEMDR}
-        ref={element => {
-          emdrElement = element;
-        }}
-      ></div>
-
-      <div className={classes.motionControllerWrapper}>
-        <div className={classes.motionController}>
-          <PlayArrow
-            className={classes.playerControl}
-            onClick={() => animation.play()}
-          />
-          <Pause
-            className={classes.playerControl}
-            onClick={() => animation.pause()}
-          />
-        </div>
-      </div>
-    </Container>
+    <Grid container className={classes.contain}>
+      <Grid item xs={12} className={classes.ballContainer}>
+        <div
+          className={classes.circleEMDR}
+          ref={(element) => {
+            emdrElement = element;
+          }}
+        ></div>
+      </Grid>
+      <Grid item xs={12} className={classes.navigationController}>
+        <Box>
+          <BottomNavigation showLabels className={classes.paper}>
+            <BottomNavigationAction
+              label="Play"
+              icon={<PlayArrow />}
+              onClick={() => animation.play()}
+              className={classes.icon}
+            />
+            <BottomNavigationAction
+              label="Pause"
+              icon={<Pause />}
+              onClick={() => animation.pause()}
+              className={classes.icon}
+            />
+          </BottomNavigation>
+        </Box>
+      </Grid>
+    </Grid>
   );
 };
 

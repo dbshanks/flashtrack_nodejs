@@ -20,14 +20,14 @@ import {
   RecentActors,
   Home,
   Apps,
+  FiberManualRecord,
 } from "@material-ui/icons";
-// import { Link } from "react-router-dom";
 
 const menuItems = [
   {
     listIcon: <Home />,
-    listText: "Dashboard",
-    routePath: "/dashboard",
+    listText: "Website",
+    routePath: "/",
   },
   {
     listIcon: <Add />,
@@ -48,6 +48,11 @@ const menuItems = [
     listIcon: <Contacts />,
     listText: "Contacts",
     routePath: "/contacts",
+  },
+  {
+    listIcon: <FiberManualRecord />,
+    listText: "EMDR",
+    routePath: "/emdr",
   },
 ];
 
@@ -74,7 +79,7 @@ export const Navigation = () => {
               {item.listIcon}
             </ListItemIcon>
             <ListItemText>
-              <Link className={classes.sidebarlinks} to={item.routePath}>
+              <Link className={classes.sidebarlinks} href={item.routePath}>
                 {item.listText}
               </Link>
             </ListItemText>
@@ -88,8 +93,8 @@ export const Navigation = () => {
       <Box component="nav">
         <AppBar
           position="fixed"
-          style={{ backgroundColor: "transparent", mixBlendMode: "difference" }}
           elevation={0}
+          style={{ backgroundColor: "transparent", mixBlendMode: "difference" }}
         >
           <Toolbar className={classes.toolBar}>
             <Toolbar>
@@ -101,9 +106,6 @@ export const Navigation = () => {
                 />
               </Link>
               <Hidden only={["xs", "md"]}>
-                <Link href="/dashboard" className={classes.links}>
-                  Dashboard
-                </Link>
                 <Link href="/journals" className={classes.links}>
                   Journals
                 </Link>
@@ -125,7 +127,7 @@ export const Navigation = () => {
             </Drawer>
             <Hidden only={["md", "lg", "xl"]}>
               <IconButton onClick={toggleSlider("left", true)}>
-                <Menu style={{ color: "#212121" }} />
+                <Menu style={{ color: "#fff" }} />
               </IconButton>
             </Hidden>
           </Toolbar>

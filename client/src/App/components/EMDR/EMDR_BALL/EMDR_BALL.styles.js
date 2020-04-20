@@ -2,37 +2,35 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   contain: {
-    height: "100vh",
-    width: "100vw",
+    height: "94.5vh",
+  },
+  navigationController: {
     display: "flex",
-    alignItems: "start",
+    justifyContent: "center",
+    alignItems: "flex-end",
+    height: "5vh",
+  },
+  ballContainer: {
+    display: "flex",
     flexDirection: "column",
-    justifyContent: "center"
+    justifyContent: "center",
+    alignItems: "flex-start",
+    height: "90vh",
   },
   circleEMDR: {
-    marginTop: "20rem",
-    width: "4rem",
-    height: "4rem",
+    marginLeft: "1rem",
+    width: "3rem",
+    height: "3rem",
     backgroundColor: "#fff",
-    borderRadius: "50%"
+    borderRadius: "50%",
   },
-  motionControllerWrapper: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    width: "100%"
+  paper: {
+    width: "100%",
+    background: "transparent",
   },
-  motionController: {
-    width: "10rem"
+  icon: {
+    color: "#fafafa",
   },
-
-  playerControl: {
-    marginTop: "18rem",
-    marginRight: "1rem",
-    alignSelf: "center",
-    color: "#666",
-    fontSize: "3.5rem"
-  }
 });
 
 export default useStyles;
