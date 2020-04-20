@@ -16,6 +16,7 @@ import { UpdateOneContact } from "./pages/Contacts/UpdateOneContact";
 import { Entry } from "./Website/Entry";
 import { CssBaseline, Container } from "@material-ui/core";
 import { EMDR } from "./components/EMDR/EMDR";
+import Layout from "./components/Layout/Layout";
 import { AnimatePresence } from "framer-motion";
 
 const App = () => {
@@ -23,28 +24,28 @@ const App = () => {
   return (
     <Fragment>
       <CssBaseline />
-      <Navigation />
-      <AnimatePresence exitBeforeEnter>
-        <Switch location={location} key={location.pathname}>
-          <Route exact path="/" component={Entry} />
-          <Route path="/app" component={Splash} />
-          <Route path="/signin" component={SignIn} />
-          <Route path="/signup" component={SignUp} />
+      <Layout>
+        <AnimatePresence exitBeforeEnter>
+          <Switch location={location} key={location.pathname}>
+            <Route exact path="/" component={Entry} />
+            <Route path="/signin" component={SignIn} />
+            <Route path="/signup" component={SignUp} />
 
-          <Route path="/journals" component={GetAllJournals} />
-          <Route path="/create/journals" component={CreateJournal} />
-          <Route path="/journal/:id" component={GetOneJournal} />
-          <Route path="/journal/update/:id" component={UpdateOneJournal} />
+            <Route path="/journals" component={GetAllJournals} />
+            <Route path="/create/journals" component={CreateJournal} />
+            <Route path="/journal/:id" component={GetOneJournal} />
+            <Route path="/journal/update/:id" component={UpdateOneJournal} />
 
-          <Route path="/contacts" component={GetAllContacts} />
-          <Route path="/create/contacts" component={CreateContact} />
-          <Route path="/contact/:id" component={GetOneContact} />
-          <Route path="/contact/update/:id" component={UpdateOneContact} />
+            <Route path="/contacts" component={GetAllContacts} />
+            <Route path="/create/contacts" component={CreateContact} />
+            <Route path="/contact/:id" component={GetOneContact} />
+            <Route path="/contact/update/:id" component={UpdateOneContact} />
 
-          <Route path="/emdr" component={EMDR} />
-          <Route path="*" component={Error404} />
-        </Switch>
-      </AnimatePresence>
+            <Route path="/emdr" component={EMDR} />
+            <Route path="*" component={Error404} />
+          </Switch>
+        </AnimatePresence>
+      </Layout>
     </Fragment>
   );
 };

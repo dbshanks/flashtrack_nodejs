@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import { withRouter } from "react-router-dom";
 import { useStyles } from "./Navigation.styles";
 import {
   AppBar,
@@ -88,6 +89,7 @@ export const Navigation = () => {
       </List>
     </Box>
   );
+
   return (
     <Fragment>
       <Box component="nav">
@@ -105,6 +107,7 @@ export const Navigation = () => {
                   alt="Flashtrack Logo"
                 />
               </Link>
+
               <Hidden only={["xs", "md"]}>
                 <Link href="/journals" className={classes.links}>
                   Journals
