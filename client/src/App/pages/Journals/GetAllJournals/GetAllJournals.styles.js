@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/styles";
 
-export const useStyles = makeStyles({
+export const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     justifyContent: "flex-start",
@@ -15,7 +15,7 @@ export const useStyles = makeStyles({
     transform: "scale(0.8)",
   },
   title: {
-    color: "#212121",
+    color: theme.palette.primary.main,
   },
   card: {
     height: "20rem",
@@ -25,7 +25,7 @@ export const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    color: "#212121",
+    color: theme.palette.primary.main,
   },
 
   cardAddContent: {
@@ -34,27 +34,27 @@ export const useStyles = makeStyles({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    color: "#fafafa",
-    background: "#212121",
+    color: theme.palette.primary.main,
+    background: theme.palette.secondary.main,
   },
 
   addIcon: {
     fontSize: "5rem",
   },
   containerSpacing: {
-    background: "#fafafa",
+    background: theme.palette.secondary.main,
     marginTop: "5rem",
   },
   danger: {
     background: "#333333",
-    color: "#fafafa",
+    color: theme.palette.secondary.main,
   },
   warning: {
     background: "#666666",
-    color: "#fff",
+    color: theme.palette.secondary.main,
   },
   caution: {
     background: "#999999",
-    color: "#fff",
+    color: theme.palette.secondary.main,
   },
-});
+}));

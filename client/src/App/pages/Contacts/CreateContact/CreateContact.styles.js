@@ -14,8 +14,8 @@ export const useStyles = makeStyles((theme) => ({
     marginBottom: "2rem",
   },
   button: {
-    backgroundColor: "#212121",
-    color: "#fafafa",
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.secondary.main,
   },
   titleField: {
     marginBottom: "2rem",
