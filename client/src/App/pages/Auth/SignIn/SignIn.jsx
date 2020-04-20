@@ -1,12 +1,16 @@
 import React from "react";
-import { Grid, Typography, Box } from "@material-ui/core";
 import { useStyles } from "./SignIn.styles";
-import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import Link from "@material-ui/core/Link";
+import {
+  Grid,
+  Typography,
+  Box,
+  Avatar,
+  Button,
+  TextField,
+  FormControlLabel,
+  Checkbox,
+  Link,
+} from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import { AnimationWrapper } from "../../../components/AnimationWrapper";
 
