@@ -4,9 +4,11 @@ import { withRouter, useLocation } from "react-router-dom";
 
 const Layout = ({ children }) => {
   const location = useLocation();
+
   return (
     <>
       {location.pathname !== "/" && <Navigation />}
+
       <main>{children}</main>
     </>
   );
