@@ -1,1 +1,1 @@
-import { Information } from "./Information";
+export { Information } from "./Information";

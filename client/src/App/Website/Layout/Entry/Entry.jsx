@@ -3,7 +3,7 @@ import { Header } from "../Header";
 import { AboutProject } from "../AboutProject";
 import { Information } from "../Information";
 import { Promotional } from "../Promotional";
-import { SignUpWeb } from "./Layout/SignUpWeb";
+import { SignUpWeb } from "../SignUpWeb";
 import { Footer } from "../Footer";
 import { CssBaseline } from "@material-ui/core";
 

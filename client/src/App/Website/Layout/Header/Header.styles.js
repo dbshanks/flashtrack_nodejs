@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles((theme) => ({
   entry: {
     backgroundColor: "#fff",
     display: "flex",
@@ -38,4 +38,3 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "100%",
   },
 }));
-export default useStyles;
