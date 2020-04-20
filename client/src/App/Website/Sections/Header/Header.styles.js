@@ -11,7 +11,7 @@ export const useStyles = makeStyles((theme) => ({
     marginTop: "5rem",
   },
   logo: {
-    width: "30rem",
+    width: "20rem",
   },
   buttonStyle: {
     color: "#fff",
