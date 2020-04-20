@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
-import { Grid, Box, Typography, Button, Container } from "@material-ui/core";
+import {
+  Grid,
+  Box,
+  Typography,
+  Button,
+  Container,
+  Link,
+} from "@material-ui/core";
 import { useStyles } from "./GetOneContact.styles";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
@@ -26,11 +33,12 @@ export const GetOneContact = (props) => {
       });
   }, [props.match.params.id]);
 
-  function deleteJournal() {
+  function deleteContact() {
     axios.delete(
       "https://flashtrack.herokuapp.com/api/v1/contacts/" +
         props.match.params.id
     );
+
     setTimeout(() => setRedirect(true), 1000);
   }
 
@@ -52,20 +60,13 @@ export const GetOneContact = (props) => {
                 {contact.note}
               </Typography>
             </Box>
-            <Button
-              variant="contained"
-              color="primary"
-              className={classes.button}
-              startIcon={<EditIcon />}
-            >
-              Edit
-            </Button>
+
             <Button
               variant="contained"
               color="primary"
               className={classes.button}
               startIcon={<DeleteIcon />}
-              onClick={() => deleteJournal()}
+              onClick={() => deleteContact()}
             >
               Delete
             </Button>

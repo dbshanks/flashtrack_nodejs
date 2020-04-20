@@ -49,14 +49,7 @@ export const GetOneJournal = (props) => {
                 {journals.date}
               </Typography>
             </Box>
-            <Button
-              variant="contained"
-              color="primary"
-              className={classes.button}
-              startIcon={<EditIcon />}
-            >
-              Edit
-            </Button>
+
             <Button
               variant="contained"
               color="primary"

@@ -1,1 +1,0 @@
-export { UpdateOneJournal } from "./UpdateOneJournal";

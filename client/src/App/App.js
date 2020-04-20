@@ -5,14 +5,12 @@ import { SignIn } from "./pages/Auth/SignIn";
 import { SignUp } from "./pages/Auth/SignUp";
 import { GetAllJournals } from "./pages/Journals/GetAllJournals";
 import { GetOneJournal } from "./pages/Journals/GetOneJournal";
-import { UpdateOneJournal } from "./pages/Journals/UpdateOneJournal";
 import { CreateJournal } from "./pages/Journals/CreateJournal";
 import { GetAllContacts } from "./pages/Contacts/GetAllContacts";
 import { CreateContact } from "./pages/Contacts/CreateContact";
 import { GetOneContact } from "./pages/Contacts/GetOneContact";
-import { UpdateOneContact } from "./pages/Contacts/UpdateOneContact";
 import { Entry } from "./Website/Sections/Entry";
-import { CssBaseline, Container } from "@material-ui/core";
+import { CssBaseline } from "@material-ui/core";
 import { EMDR } from "./components/EMDR/EMDR";
 import Layout from "./components/Layout/Layout";
 import { AnimatePresence } from "framer-motion";
@@ -33,12 +31,10 @@ export const App = () => {
             <Route path="/journals" component={GetAllJournals} />
             <Route path="/create/journals" component={CreateJournal} />
             <Route path="/journal/:id" component={GetOneJournal} />
-            <Route path="/journal/update/:id" component={UpdateOneJournal} />
 
             <Route path="/contacts" component={GetAllContacts} />
             <Route path="/create/contacts" component={CreateContact} />
             <Route path="/contact/:id" component={GetOneContact} />
-            <Route path="/contact/update/:id" component={UpdateOneContact} />
 
             <Route path="/emdr" component={EMDR} />
             <Route path="*" component={Error404} />
