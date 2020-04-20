@@ -11,7 +11,7 @@ import { GetAllContacts } from "./pages/Contacts/GetAllContacts";
 import { CreateContact } from "./pages/Contacts/CreateContact";
 import { GetOneContact } from "./pages/Contacts/GetOneContact";
 import { UpdateOneContact } from "./pages/Contacts/UpdateOneContact";
-import { Entry } from "./Website/Layout/Entry";
+import { Entry } from "./Website/Sections/Entry";
 import { CssBaseline, Container } from "@material-ui/core";
 import { EMDR } from "./components/EMDR/EMDR";
 import Layout from "./components/Layout/Layout";

@@ -28,7 +28,7 @@ export const AboutProject = () => {
           <ScrollAnimation animateIn="fadeInUp" delay={500}>
             <PlayCircleFilled className={classes.iconSize} />
             <Typography variant="h5">
-              escape moments with visual and audio tools
+              escape moments with visual tools
             </Typography>
           </ScrollAnimation>
         </Grid>

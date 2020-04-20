@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {
   Typography,
+  Box,
   Grid,
   Link,
   Card,
@@ -53,21 +54,22 @@ export const GetAllContacts = () => {
                 >
                   <CardActionArea>
                     <CardContent className={classes.cardContent}>
-                      <div>
-                        <Typography variant="h5" className={classes.title}>
+                      <Box>
+                        <Typography variant="h4" className={classes.title}>
                           {contact.fullname}
                         </Typography>
-
-                        <Typography variant="body2" component="p">
-                          {contact.phone}
-                        </Typography>
-                        <Typography variant="body2" component="p">
-                          {contact.email}
-                        </Typography>
-                        <Typography variant="body2" component="p">
-                          {contact.note}
-                        </Typography>
-                      </div>
+                        <Box mt={5}>
+                          <Typography variant="body2" component="p">
+                            {contact.phonenumber}
+                          </Typography>
+                          <Typography variant="body2" component="p">
+                            {contact.email}
+                          </Typography>
+                          <Typography variant="body2" component="p">
+                            {contact.note}
+                          </Typography>
+                        </Box>
+                      </Box>
                     </CardContent>
                   </CardActionArea>
                 </Link>
