@@ -10,10 +10,10 @@ import {
 } from "@material-ui/core";
 import ScrollAnimation from "react-animate-on-scroll";
 
-import useStyles from "./Header.styles";
+import { useStyles } from "./Header.styles";
 import "animate.css/animate.min.css";
 
-const Header = () => {
+export const Header = () => {
   const classes = useStyles();
   return (
     <Container maxWidth="xl" className={classes.entry}>
@@ -47,5 +47,3 @@ const Header = () => {
     </Container>
   );
 };
-
-export default Header;

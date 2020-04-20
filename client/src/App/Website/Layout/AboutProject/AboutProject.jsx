@@ -4,14 +4,14 @@ import {
   ImportContacts,
   MenuBook,
   ContactPhone,
-  PlayCircleFilled
+  PlayCircleFilled,
 } from "@material-ui/icons";
 
 import ScrollAnimation from "react-animate-on-scroll";
-import useStyles from "./AboutProject.styles";
+import { useStyles } from "./AboutProject.styles";
 import "animate.css/animate.min.css";
 
-const AboutProject = () => {
+export const AboutProject = () => {
   const classes = useStyles();
   return (
     <Container maxWidth="xl" className={classes.root}>
@@ -50,5 +50,3 @@ const AboutProject = () => {
     </Container>
   );
 };
-
-export default AboutProject;

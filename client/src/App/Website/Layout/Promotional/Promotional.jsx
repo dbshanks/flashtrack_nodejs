@@ -2,10 +2,10 @@ import React from "react";
 import { CssBaseline, Container, Grid, Typography } from "@material-ui/core";
 import ScrollAnimation from "react-animate-on-scroll";
 
-import useStyles from "./Promotional.styles";
+import { useStyles } from "./Promotional.styles";
 import "animate.css/animate.min.css";
 
-const Promotional = () => {
+export const Promotional = () => {
   const classes = useStyles();
   return (
     <Container maxWidth="xl" className={classes.contain}>
@@ -26,5 +26,3 @@ const Promotional = () => {
     </Container>
   );
 };
-
-export default Promotional;

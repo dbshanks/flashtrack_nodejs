@@ -1,9 +1,9 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
 
-import useStyles from "./Footer.styles";
+import { useStyles } from "./Footer.styles";
 
-const Footer = () => {
+export const Footer = () => {
   const classes = useStyles();
   return (
     <Grid container>
@@ -13,5 +13,3 @@ const Footer = () => {
     </Grid>
   );
 };
-
-export default Footer;

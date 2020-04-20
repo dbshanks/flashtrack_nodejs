@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles({
+export const useStyles = makeStyles({
   footerStage: {
     backgroundColor: "#333",
     color: "#fff",
@@ -15,5 +15,3 @@ const useStyles = makeStyles({
     width: "15rem",
   },
 });
-
-export default useStyles;

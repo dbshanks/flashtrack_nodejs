@@ -2,10 +2,10 @@ import React from "react";
 import ScrollAnimation from "react-animate-on-scroll";
 import { Container, Grid, Typography, Link } from "@material-ui/core";
 
-import useStyles from "./SignUp.styles";
+import { useStyles } from "./SignUp.styles";
 import "animate.css/animate.min.css";
 
-const SignUpWeb = () => {
+export const SignUpWeb = () => {
   const classes = useStyles();
   return (
     <Container maxWidth="xl" className={classes.signup}>
@@ -34,5 +34,3 @@ const SignUpWeb = () => {
     </Container>
   );
 };
-
-export default SignUpWeb;

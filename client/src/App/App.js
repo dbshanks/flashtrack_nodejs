@@ -1,7 +1,5 @@
 import React, { Fragment } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
-import { Splash } from "./pages/Splash";
-import { Navigation } from "./components/Navigation";
 import { Error404 } from "./pages/Error404";
 import { SignIn } from "./pages/Auth/SignIn";
 import { SignUp } from "./pages/Auth/SignUp";
@@ -13,13 +11,13 @@ import { GetAllContacts } from "./pages/Contacts/GetAllContacts";
 import { CreateContact } from "./pages/Contacts/CreateContact";
 import { GetOneContact } from "./pages/Contacts/GetOneContact";
 import { UpdateOneContact } from "./pages/Contacts/UpdateOneContact";
-import { Entry } from "./Website/Entry";
+import { Entry } from "./Website/Layout/Entry";
 import { CssBaseline, Container } from "@material-ui/core";
 import { EMDR } from "./components/EMDR/EMDR";
 import Layout from "./components/Layout/Layout";
 import { AnimatePresence } from "framer-motion";
 
-const App = () => {
+export const App = () => {
   const location = useLocation();
   return (
     <Fragment>
@@ -50,5 +48,3 @@ const App = () => {
     </Fragment>
   );
 };
-
-export default App;

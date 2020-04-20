@@ -1,9 +1,9 @@
 import React from "react";
 import ScrollAnimation from "react-animate-on-scroll";
 import { Container, Grid, Typography } from "@material-ui/core";
-import useStyles from "./Information.styles";
+import { useStyles } from "./Information.styles";
 
-const Information = () => {
+export const Information = () => {
   const classes = useStyles();
   return (
     <Container maxWidth="xl" className={classes.information}>
@@ -28,5 +28,3 @@ const Information = () => {
     </Container>
   );
 };
-
-export default Information;

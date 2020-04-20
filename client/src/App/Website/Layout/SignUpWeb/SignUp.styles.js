@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles((theme) => ({
   signup: {
     height: "50vh",
     backgroundColor: "#222",
@@ -26,5 +26,3 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
   },
 }));
-
-export default useStyles;

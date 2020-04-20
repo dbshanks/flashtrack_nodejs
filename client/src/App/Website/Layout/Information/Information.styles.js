@@ -1,25 +1,23 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(theme => ({
+export const useStyles = makeStyles((theme) => ({
   information: {
     backgroundColor: "#fff",
     color: "#333",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: "10rem"
+    marginBottom: "10rem",
   },
   iScreens: {
-    maxWidth: "100%"
+    maxWidth: "100%",
   },
   rightStage: {
     display: "flex",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   caption: {
-    textAlign: "center"
-  }
+    textAlign: "center",
+  },
 }));
-
-export default useStyles;
