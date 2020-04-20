@@ -37,7 +37,7 @@ export const CreateContact = () => {
         {redirect ? <Redirect to="/contacts" /> : null}
 
         <Grid container justify="space-around">
-          <Grid item xs={6}>
+          <Grid item xs={3}>
             <form onSubmit={(e) => submit(e)}>
               <div>
                 <TextField
