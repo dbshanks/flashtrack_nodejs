@@ -41,6 +41,11 @@ export const useStyles = makeStyles((theme) => ({
   addIcon: {
     fontSize: "5rem",
   },
+  iconStage: {
+    fontSize: ".9rem",
+    marginRight: "1rem",
+    color: "#888",
+  },
   containerSpacing: {
     marginTop: "5rem",
   },

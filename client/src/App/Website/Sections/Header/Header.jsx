@@ -18,9 +18,15 @@ export const Header = () => {
   return (
     <Container maxWidth="xl" className={classes.entry}>
       <CssBaseline />
-
       <Grid container spacing={2} justify="center" alignItems="center">
-        <Grid xs={12} sm={12} lg={6}>
+        <Grid item xs={12}>
+          <img
+            src="./img/blacklogo.svg"
+            alt="Flashtrack Logo"
+            className={classes.logo}
+          />
+        </Grid>
+        <Grid item xs={12} sm={12} lg={6}>
           <div>
             <ScrollAnimation
               animateIn="fadeInLeft"
@@ -32,7 +38,7 @@ export const Header = () => {
             </ScrollAnimation>
           </div>
         </Grid>
-        <Grid xs={12} sm={12} lg={6}>
+        <Grid item xs={12} sm={12} lg={6}>
           <div className={classes.paper}>
             <ScrollAnimation animateIn="fadeInRight">
               <img

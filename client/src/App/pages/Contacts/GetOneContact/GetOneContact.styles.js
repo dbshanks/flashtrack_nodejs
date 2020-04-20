@@ -11,4 +11,9 @@ export const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
   },
+  iconStage: {
+    fontSize: ".9rem",
+    marginRight: "1rem",
+    color: "#888",
+  },
 }));

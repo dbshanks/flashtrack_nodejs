@@ -9,8 +9,7 @@ import {
   Link,
 } from "@material-ui/core";
 import { useStyles } from "./GetOneContact.styles";
-import DeleteIcon from "@material-ui/icons/Delete";
-import EditIcon from "@material-ui/icons/Edit";
+import { Add, Email, Phone, Note, Delete } from "@material-ui/icons";
 import axios from "axios";
 import { AnimationWrapper } from "../../../components/AnimationWrapper";
 
@@ -52,11 +51,16 @@ export const GetOneContact = (props) => {
             <Typography variant="h3">{contact.fullname}</Typography>
 
             <Box className={classes.contactEntry} component="div">
-              <Typography variant="body1">{contact.phonenumber}</Typography>
+              <Typography variant="body1">
+                <Phone className={classes.iconStage} />
+                {contact.phonenumber}
+              </Typography>
               <Typography color="primary" variant="body2">
+                <Email className={classes.iconStage} />
                 {contact.email}
               </Typography>
               <Typography color="primary" variant="body2">
+                <Note className={classes.iconStage} />
                 {contact.note}
               </Typography>
             </Box>
@@ -65,7 +69,7 @@ export const GetOneContact = (props) => {
               variant="contained"
               color="primary"
               className={classes.button}
-              startIcon={<DeleteIcon />}
+              startIcon={<Delete />}
               onClick={() => deleteContact()}
             >
               Delete

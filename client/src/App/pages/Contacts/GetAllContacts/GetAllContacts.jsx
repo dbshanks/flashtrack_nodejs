@@ -10,7 +10,7 @@ import {
   Container,
 } from "@material-ui/core";
 import { useStyles } from "./GetAllContacts.styles";
-import { Add } from "@material-ui/icons";
+import { Add, Email, Phone, Note } from "@material-ui/icons";
 import axios from "axios";
 import { AnimationWrapper } from "../../../components/AnimationWrapper";
 
@@ -60,12 +60,15 @@ export const GetAllContacts = () => {
                         </Typography>
                         <Box mt={5}>
                           <Typography variant="body2" component="p">
+                            <Phone className={classes.iconStage} />
                             {contact.phonenumber}
                           </Typography>
                           <Typography variant="body2" component="p">
+                            <Email className={classes.iconStage} />
                             {contact.email}
                           </Typography>
                           <Typography variant="body2" component="p">
+                            <Note className={classes.iconStage} />
                             {contact.note}
                           </Typography>
                         </Box>

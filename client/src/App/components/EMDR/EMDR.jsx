@@ -13,7 +13,7 @@ export const EMDR = () => {
   const [color, setColor] = useState("#212121");
 
   return (
-    <Grid container style={{ backgroundColor: color }}>
+    <Grid container style={{ backgroundColor: color, height: "100vh" }}>
       <Grid item xs={12}>
         <EMDR_BALL />
       </Grid>

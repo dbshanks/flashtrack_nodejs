@@ -3,7 +3,6 @@ import { Redirect } from "react-router-dom";
 import { Grid, Box, Typography, Button, Container } from "@material-ui/core";
 import { useStyles } from "./GetOneJournal.styles";
 import DeleteIcon from "@material-ui/icons/Delete";
-import EditIcon from "@material-ui/icons/Edit";
 import axios from "axios";
 import { AnimationWrapper } from "../../../components/AnimationWrapper";
 
