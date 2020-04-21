@@ -16,7 +16,7 @@ export const SignUpWeb = () => {
           </ScrollAnimation>
           <ScrollAnimation animateIn="fadeInUp" delay={250}>
             <Link href="/signin" className={classes.links}>
-              <Typography variant="h2">sign in - login</Typography>
+              <Typography variant="h2">sign in</Typography>
             </Link>
           </ScrollAnimation>
         </Grid>
