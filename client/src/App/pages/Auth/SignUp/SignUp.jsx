@@ -93,7 +93,7 @@ export const SignUp = () => {
                   control={
                     <Checkbox value="allowExtraEmails" color="primary" />
                   }
-                  label="I want to receive inspiration, marketing promotions and updates via email."
+                  label="Yes,I want to receive inspiration, marketing promotions and updates via email."
                 />
               </Grid>
             </Grid>
