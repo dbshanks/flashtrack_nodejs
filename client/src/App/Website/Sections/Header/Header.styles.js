@@ -12,6 +12,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   logo: {
     width: "20rem",
+    marginTop: "-6rem",
   },
   buttonStyle: {
     color: "#fff",
